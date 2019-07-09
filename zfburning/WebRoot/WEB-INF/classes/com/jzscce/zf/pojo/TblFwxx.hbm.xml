@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.jzscce.zf.pojo">
+	<!-- dynamic-insert="true" dynamic-update="true" 添加时为没有添加的某个字段使用数据库的默认值，而不是null -->
+    <class name="com.jzscce.zf.pojo.TblFwxx" table="tbl_fwxx">    
+        <id name="fwid"  column="fwid" type="java.lang.Integer">
+            <generator class="native"/>
+            </id>
+        <property name="uid"  column="uid"/>
+        <property name="jdid" column="jdid"/>
+        <property name="lxid" column="lxid"/>
+        <property name="shi" column="shi"/>
+        <property name="ting" column="ting"/>
+		<property name="mj" column="mj"/>
+		<property name="lcid" column="lcid"/>
+		<property name="dt" column="dt"/>
+        <property name="fwxx" column="fwxx"/>
+        <property name="zj" column="zj"/>
+         <property name="jwxx" column="jwxx"/>
+        <property name="title" column="title"/>
+        <property name="date" column="date"/>
+        <property name="telephone" column="telephone"/>
+        <property name="lxr" column="lxr"/>
+    </class>
+</hibernate-mapping>
+
+

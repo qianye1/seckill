@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd"> <!-- bean definitions here -->
+	
+	<!-- 1、添加jar包,hibernate jar 包、spring jar包" -->
+	
+	<!-- 2、设置数据源，C3P0默认数据源 -->
+	<bean id="C3P0DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/javaweb?serverTimezone=UTC"/>
+		<property name="user" value="root"/>
+		<property name="password" value="666666"/>
+	</bean>
+	
+	<!-- 3、将hibernate的sessionFactory交给spring管理 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="C3P0DataSource"/>
+		<property name="mappingLocations"> 
+                   <value>classpath:/com/jzscce/zf/pojo/*.hbm.xml </value> 
+       </property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.current_session_context_class">
+				org.springframework.orm.hibernate5.SpringSessionContext</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 4、注册dao和bean -->
+	<bean id="tblFwxxDaoImpl" class="com.jzscce.zf.dao.TblFwxxDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- 导入Service配置文件 -->
+	<bean id="tblFwxxBizImpl" class="com.jzscce.zf.biz.TblFwxxBizImpl">
+		<property name="daoImpl" ref="tblFwxxDaoImpl"></property>
+	</bean>
+	<bean id="tblFwxx" class="com.jzscce.zf.pojo.TblFwxx"/>
+	<bean id="tblFwlx" class="com.jzscce.zf.pojo.TblFwlx"/>
+	<bean id="tblJd" class="com.jzscce.zf.pojo.TblJd"/>
+	<bean id="tblQx" class="com.jzscce.zf.pojo.TblQx"/>
+	<!-- 导入action配置文件 -->
+	<bean id="tblFwxxBean" class="com.cdut.actions.TblFwxxAction" scope="prototype">
+	   <property name="bizImpl" ref="tblFwxxBizImpl"/>
+	   <property name="tblFwxx" ref="tblFwxx"/>
+	   <property name="tblFwlx" ref="tblFwlx"/>
+	   <property name="tblJd" ref="tblJd"/>
+	   <property name="tblQx" ref="tblQx"/>
+	</bean>	
+</beans>
+
+
+	

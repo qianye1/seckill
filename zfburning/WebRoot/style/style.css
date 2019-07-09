@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+*{
+	margin: 0;
+	padding: 0 ;
+}
+
+/*设置最外层大盒子*/
+#box{
+	position: relative;
+	width: 720px;
+	height: 300px;
+	border: 2px solid black;
+	margin: 5px auto;
+	/*将图片依次排开，多余部分隐藏掉*/
+	overflow: hidden;
+}
+
+/*设置ul在右下角*/
+#list{
+	position: absolute;
+	right: 50px;
+	bottom: 20px;
+	z-index: 2;
+}
+
+#list li{
+	width: 20px;
+	height: 20px;
+	border: 1px solid white;
+	/*成行显示*/
+	float: left;
+	/*去掉黑点*/
+	list-style: none;
+	margin: 0 5px;
+	text-decoration:none;
+}
+
+#imgbox{
+	position: absolute;
+	height: 600px;
+	/*保证图片滑动时，没有缝隙 720*2*/
+	width: 1440px;
+	background: red;
+	/*横行排列*/
+	float: left;
+	left: 0;
+	top: 0;
+}
+
+#imgbox img{
+	position: absolute;
+	left: 720px;
+	top: 0;
+}
+
+/*设置第一张图片*/
+#imgbox .first{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+/*向左滑动按钮*/
+.btnleft{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	/*background: yellow;*/
+	left: 0;
+	top: 130px;
+	z-index: 99;
+}
+
+/*向右滑动的按钮*/
+.btnright{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	/*background: yellow;*/
+	right: 0;
+	top: 130px;
+	z-index: 99;
+}
+
+/*更改指示标的背景颜色*/
+.hover{
+	background: white;
+}
+
+
+
+

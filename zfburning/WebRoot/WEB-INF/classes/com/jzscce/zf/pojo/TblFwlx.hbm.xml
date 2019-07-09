@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+ <hibernate-mapping package="com.jzscce.zf.pojo">
+    <!-- hbm配置文件的作用是
+    	（1）映射类和表
+    	（2）映射属性和字段
+     -->
+    <class name="com.jzscce.zf.pojo.TblFwlx" table="tbl_fwlx">
+	    <id name="lxid" column="lxid" type="java.lang.Integer">
+	    	<generator class="native" />
+	    </id>
+	    <property name="fwlx" column="fwlx" type="java.lang.String"/>
+    </class>
+ </hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+	<struts>
+	 <constant name="struts.enable.DynamicMethodInvocation" value="true" />  
+	<package name="xxx" namespace="/" extends="struts-default">
+		<action name="tblFwxx" class="tblFwxxBean">														
+			<result name="goScce">/index.jsp</result>
+			<result name="showInfo">/detail.jsp</result>
+			<result name="loginScce">/login_form.jsp</result>
+			<result name="loginError">/reg.jsp</result>
+			<result name="login_form">/login_form.jsp</result>
+			<result name="myFwxxInfo">/my.jsp</result>
+			<result name="myQfxxInfo">/me.jsp</result>
+			<result name="post">/post.jsp</result>
+			<result name="updInfo">/upd.jsp</result>			
+			<result name="list">/index.jsp</result>
+			<allowed-methods>myQfxxInfo,postRent,login,query,login_form,leave,addUser,showInfo,myFwxxInfo,postConfirm,delzf,updInfo,upd,sea,queryAllPage</allowed-methods>	
+		</action>	
+	</package>
+	</struts>
+

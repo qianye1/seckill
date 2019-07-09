@@ -1,0 +1,69 @@
+#fabu {
+	font-family: "STXingkai";
+	font-size: 20px;
+	color: #6A5ACD;
+	font-weight:Bold;
+	Word-spacing:normal;
+    background:#FFFFE0;
+}
+#fabu-title{ 
+	font-family: "STHupo";
+	height:50px; 
+	font-size:43px; 
+	background:#C9C9C9;
+	color: red;
+	font-weight:Bold;
+}
+#fabu-titles{ 
+	font-family: "FZShuTi";
+	height:17px; 
+	font-size:17px;
+	color:black;
+	background:#C9C9C9;
+}
+#fabu-title2{ 
+	font-family: "STKaiti";
+	height:73px; 
+	font-size:40px;
+	font-weight:Bold;
+	background:#3D3D3D;
+	color: #FFFFFF
+}
+#guanli {
+	font-family: "STZhongsong";
+	font-size: 32px;
+	background:#FFFFFF;
+	color:black;
+	Word-spacing:"25px"
+}
+a { 
+	font-family: "STZhongsong";
+	font-size: 32px;
+	background:#FFFFFF;
+	color:black;
+	Word-spacing:"25px";
+	text-decoration:none;
+}
+#tijiao{
+	width:120px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	line-height: 50px;
+	border-radius: 3px;
+	background: #FF5A00;
+	cursor: pointer;
+}
+#tijiao1{
+	width:120px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	line-height: 50px;
+	border-radius: 3px;
+	background: #FF5A00;
+	cursor: pointer;
+}
+
+.header{width:100%;height:55px; background:#f1f1f1;}
+.logo1{width:100%; height:30px;font-family:"FZShuTi";font-weight:Bold;font-size:29px; }
